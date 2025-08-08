@@ -17,7 +17,7 @@ function App() {
   // GET: Fetch all books
   const fetchBooks = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:8000/api/books/");
+      const response = await axios.get("https://book-store-django-react.onrender.com/api/books/");
       setBooks(response.data);
     } catch (error) {
       console.error("Error fetching books", error);
@@ -27,7 +27,7 @@ function App() {
   // POST: Add new book
   const addBook = async () => {
     try {
-      await axios.post("http://127.0.0.1:8000/api/books/create/", {
+      await axios.post("https://book-store-django-react.onrender.com/api/books/create/", {
         title: title,
         release_year: releaseYear,
       });
@@ -41,7 +41,7 @@ function App() {
   // PUT: Update book
   const updateBook = async () => {
     try {
-      await axios.put(`http://127.0.0.1:8000/api/books/${bookId}/`, {
+      await axios.put(`https://book-store-django-react.onrender.com/api/books/${bookId}/`, {
         title: title,
         release_year: releaseYear,
       });
@@ -55,7 +55,7 @@ function App() {
   // DELETE: Delete book
   const deleteBook = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/books/${id}/`);
+      await axios.delete(`https://book-store-django-react.onrender.com/api/books/${id}/`);
       fetchBooks();
     } catch (error) {
       console.error("Error deleting book", error);
